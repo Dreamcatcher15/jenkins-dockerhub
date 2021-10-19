@@ -8,13 +8,13 @@ pipeline {
 
         stage('Checkout') {
             steps{
-                git branch: 'main', url: 'https://github.com/Vakhob/jenkins-dockerhub.git'
+                git branch: 'main', url: 'git@github.com:Dreamcatcher15/jenkins-dockerhub.git'
             }
         }
 
         stage('Build') {
             steps{
-                sh "docker build -t devops14:latest ."
+                sh "docker build -t practice:latest ."
             }
         }
 
@@ -26,13 +26,13 @@ pipeline {
 
         stage('ImageTag') {
             steps {
-                sh "docker tag devops14:latest fazilat/devops14-docker:version2"
+                sh "docker tag practice:latest sugdiyona789/practice:version2"
             }
         }
 
         stage('Push') {
             steps {
-                sh "docker push fazilat/devops14-docker:version2"
+                sh "docker push sugdiyona789/practice:version2"
             }
         }
     }
