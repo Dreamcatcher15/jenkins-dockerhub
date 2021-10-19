@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'Built-In Node' }
+    agent { label 'docker-integration' }
     environment {
         DOCKERHUB_CREDENTIALS=credentials('dockerhub-sugdiyona')
     }
